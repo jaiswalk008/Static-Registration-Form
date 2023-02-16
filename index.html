@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image: url('./images/background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed ;
+        }
+         
+        .form1{
+            border:3px solid orange;
+            border-radius: 2%;
+            margin: 10px 20% 0 20%;
+           
+        }
+        #p1{
+            color:orange;
+            font-family: 'Poppins', sans-serif;
+
+            font-weight: 500;
+            font-size: 120%;
+            
+        }
+        label{
+            font-size: 120%;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <form  action="./"  class="row form1 p-2 needs-validation" novalidate>
+        <p class="text-center pt-3" id="p1">Book a call</p>
+        <p class="text-center text-light">Book a call slot and our representative will call you within 1hr of selected time.</p>
+        <hr class="text-light ">
+        <div class="row g-0">
+            <div class="col-12 mb-3">
+                <label for="name" class="form-label text-light">Name:</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name" required>
+                <div class="invalid-feedback">Please Enter Your Name!</div>
+                
+            </div>
+            <div class="col-12 mb-3">
+                <label for="email" class="form-label text-light">Email:</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email" required>
+                <div class="invalid-feedback">Please Enter a valid Email!</div>
+                <div class="valid-feedback">Valid Email</div>
+            </div>
+            <div class="col-12 mb-3">
+                <label for="phone" class="form-label text-light">Phone Number:</label>
+                <input type="tel" class="form-control" name="phone" id="phone" maxlength="10" placeholder="Enter Your Phone Number" pattern="[0-9]{10}" required >
+                <div class="invalid-feedback">Please Enter a Phone Number!</div>
+                <div class="valid-feedback">Valid Phone Number</div>
+            </div>
+            <div class="col-6 mb-3 p-1">
+                <label for="date" class="form-label text-light">Date:</label>
+                <input type="date" class="form-control" name="date" id="date" required>
+                <div class="invalid-feedback">Please select a date</div>
+            </div>
+            <div class="col-6 mb-3 p-1">
+                <label for="time" class="form-label text-light">Time:</label>
+                <input type="time" class="form-control" name="time" id="time" required>
+                <div class="invalid-feedback">Please select a time</div>
+            </div>
+            <div class="col-12 d-grid gap-">
+                <button type="submit"   class ="btn btn-warning w-100%">Get a Call</button>
+            </div>
+           
+        </div>
+    </form>
+    <script>  
+
+        (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
+        console.log(forms);
+        
+    </script>
+    
+    
+   
+
+</body>
+</html>
