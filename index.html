@@ -39,7 +39,7 @@
 </head>
 <body>
 
-    <form  action="./"  class=" row form1 p-2 needs-validation" novalidate>
+    <form   id="my-form" class=" row form1 p-2 ">
         <p class="text-center pt-3" id="p1">Book a call</p>
         <p class="text-center text-light">Book a call slot and our representative will call you within 1hr of selected time.</p>
         <hr class="text-light ">
@@ -47,30 +47,28 @@
             <div class="col-12 mb-3">
                 <label for="name" class="form-label text-light">Name:</label>
                 <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name" required>
-                <div class="invalid-feedback">Please Enter Your Name!</div>
+                
                 
             </div>
             <div class="col-12 mb-3">
                 <label for="email" class="form-label text-light">Email:</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email" required>
-                <div class="invalid-feedback">Please Enter a valid Email!</div>
-                <div class="valid-feedback">Valid Email</div>
+                
             </div>
             <div class="col-12 mb-3">
                 <label for="phone" class="form-label text-light">Phone Number:</label>
-                <input type="tel" class="form-control" name="phone" id="phone" maxlength="10" placeholder="Enter Your Phone Number" pattern="[0-9]{10}" required >
-                <div class="invalid-feedback">Please Enter a Phone Number!</div>
-                <div class="valid-feedback">Valid Phone Number</div>
+                <input type="tel" class="form-control" name="phone" id="phone" maxlength="10" placeholder="Enter Your Phone Number" pattern="[0-9]{10}"   >
+                
             </div>
             <div class="col-6 mb-3 p-1">
                 <label for="date" class="form-label text-light">Date:</label>
-                <input type="date" class="form-control" name="date" id="date" required>
-                <div class="invalid-feedback">Please select a date</div>
+                <input type="date" class="form-control" name="date" id="date"  >
+             
             </div>
             <div class="col-6 mb-3 p-1">
                 <label for="time" class="form-label text-light">Time:</label>
-                <input type="time" class="form-control" name="time" id="time" required>
-                <div class="invalid-feedback">Please select a time</div>
+                <input type="time" class="form-control" name="time" id="time"  >
+                
             </div>
             <div class="col-12 d-grid gap-">
                 <button type="submit"   class ="btn btn-warning w-100%">Get a Call</button>
@@ -81,34 +79,7 @@
     <div class="d-flex justify-content-center">
         <a class="text-light align-self-center" href="./callingList.html">Click here to view the Calling List</a>
     </div>
-    
-    <script>  
-
-        (function () {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-            })
-        })()
-        console.log(forms);
-        
-    </script>
-    
-    
-   
+    <script src="script.js"></script>
 
 </body>
 </html>
